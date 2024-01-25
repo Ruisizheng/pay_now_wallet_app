@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pay_now_wallet_app/screens/info_screen.dart';
+import 'package:pay_now_wallet_app/screens/settings_screen.dart';
 import 'package:pay_now_wallet_app/widgets/horizontal_spacer.dart';
 import 'package:pay_now_wallet_app/widgets/vertical_spacer.dart';
 
@@ -79,49 +81,59 @@ class ProfileScreen extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.w),
           child: Column(children: [
-            Container(
-              width: 375.w,
-              height: 64.h,
-              padding: EdgeInsets.symmetric(horizontal: 15.w),
-              decoration: BoxDecoration(
-                color: const Color(0xFFF3F4F5),
-                borderRadius: BorderRadius.circular(15.w),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: 24.w,
-                    height: 24.h,
-                    child: FittedBox(
-                      fit: BoxFit.fill,
-                      child: SvgPicture.asset(
-                        'assets/images/profile_icon.svg',
-                        color: Colors.black,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const InfoScreen(),
+                  ),
+                );
+              },
+              child: Container(
+                width: 375.w,
+                height: 64.h,
+                padding: EdgeInsets.symmetric(horizontal: 15.w),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF3F4F5),
+                  borderRadius: BorderRadius.circular(15.w),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: 24.w,
+                      height: 24.h,
+                      child: FittedBox(
+                        fit: BoxFit.fill,
+                        child: SvgPicture.asset(
+                          'assets/images/profile_icon.svg',
+                          color: Colors.black,
+                        ),
                       ),
                     ),
-                  ),
-                  const HorizontalSpacer(width: 14),
-                  Text(
-                    'My Info',
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const Spacer(),
-                  SizedBox(
-                    width: 24.w,
-                    height: 24.h,
-                    child: FittedBox(
-                      fit: BoxFit.fill,
-                      child: SvgPicture.asset(
-                        'assets/images/arrow_icon.svg',
-                        color: Colors.black,
+                    const HorizontalSpacer(width: 14),
+                    Text(
+                      'My Info',
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                  )
-                ],
+                    const Spacer(),
+                    SizedBox(
+                      width: 24.w,
+                      height: 24.h,
+                      child: FittedBox(
+                        fit: BoxFit.fill,
+                        child: SvgPicture.asset(
+                          'assets/images/arrow_icon.svg',
+                          color: Colors.black,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             const VerticalSpacer(height: 16),
@@ -171,49 +183,58 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             const VerticalSpacer(height: 16),
-            Container(
-              height: 64.h,
-              width: 375.w,
-              padding: EdgeInsets.symmetric(horizontal: 15.w),
-              decoration: BoxDecoration(
-                color: const Color(0xFFF3F4F5),
-                borderRadius: BorderRadius.circular(15.w),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: 24.w,
-                    height: 24.h,
-                    child: FittedBox(
-                      fit: BoxFit.fill,
-                      child: SvgPicture.asset(
-                        'assets/images/settings_icon.svg',
-                        color: Colors.black,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SettingsScreen()),
+                );
+              },
+              child: Container(
+                height: 64.h,
+                width: 375.w,
+                padding: EdgeInsets.symmetric(horizontal: 15.w),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFF3F4F5),
+                  borderRadius: BorderRadius.circular(15.w),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      width: 24.w,
+                      height: 24.h,
+                      child: FittedBox(
+                        fit: BoxFit.fill,
+                        child: SvgPicture.asset(
+                          'assets/images/settings_icon.svg',
+                          color: Colors.black,
+                        ),
                       ),
                     ),
-                  ),
-                  const HorizontalSpacer(width: 14),
-                  Text(
-                    "Settings",
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const Spacer(),
-                  SizedBox(
-                    width: 24.w,
-                    height: 24.h,
-                    child: FittedBox(
-                      fit: BoxFit.fill,
-                      child: SvgPicture.asset(
-                        'assets/images/arrow_icon.svg',
-                        color: Colors.black,
+                    const HorizontalSpacer(width: 14),
+                    Text(
+                      "Settings",
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                  ),
-                ],
+                    const Spacer(),
+                    SizedBox(
+                      width: 24.w,
+                      height: 24.h,
+                      child: FittedBox(
+                        fit: BoxFit.fill,
+                        child: SvgPicture.asset(
+                          'assets/images/arrow_icon.svg',
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             const VerticalSpacer(height: 16),
